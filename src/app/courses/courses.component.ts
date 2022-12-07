@@ -17,7 +17,7 @@ const emptyCourse: Course = {
 })
 export class CoursesComponent implements OnInit {
 
-  courses = [];
+  courses: Course[] = [];
 
   selectedCourse = emptyCourse;
   originalTitle = '';
@@ -25,7 +25,12 @@ export class CoursesComponent implements OnInit {
   constructor(private coursesService: CoursesService) { }
 
   ngOnInit(): void {
-    this.courses = this.coursesService.courses;
+    this.fetchCourses();
+  }
+
+  private fetchCourses() {
+    this.coursesService.all()
+      .subscribe((result: Course[]) => this.courses = result);
   }
 
   selectCourse(course: Course){
@@ -33,7 +38,7 @@ export class CoursesComponent implements OnInit {
     this.originalTitle = course.title;
   }
 
-  deleteCourse(id: number) {
+  deleteCourse(id: string) {
     console.log("Delete course", id);
   }
 
@@ -42,7 +47,22 @@ export class CoursesComponent implements OnInit {
   }
 
   save(course: Course) {
-    console.log('Save course ', course);
-    this.selectCourse(course);
+
+    if(course.id){
+
+      this.updateCourse(course);
+    }else {
+      this.createCourse(course);
+    }
+
+    //this.selectCourse(course);
+  }
+
+  private createCourse(course: Course) {
+    this.coursesService.create(course).subscribe(result=> this.fetchCourses())
+  }
+
+  private updateCourse(course: Course) {
+    this.coursesService.update(course).subscribe(result=> this.fetchCourses())
   }
 }

@@ -1,11 +1,66 @@
 {
   "courses": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Angular 13 Fundamentals",
       "description": "Learn the fundamentals of Angular 13",
       "percentComplete": 26,
       "favorite": true
+    },
+    {
+      "id": "2",
+      "title": "Javascript HARDEST PARTS!!!",
+      "description": "Learn the Javascript Like a pro",
+      "percentComplete": 66,
+      "favorite": true
+    },
+    {
+      "id": "3",
+      "title": "Rapid Application Development Patterns",
+      "description": "This must be done eventually",
+      "percentComplete": 5,
+      "favorite": true
+    },
+    {
+      "id": "SVxTDGD",
+      "title": "New Course",
+      "description": "Super awesome y'all!!! Holla!",
+      "percentComplete": 70,
+      "favorite": true
+    }
+  ],
+  "lessons": [
+    {
+      "id": "1",
+      "title": "Hello Angular"
+    },
+    {
+      "id": "2",
+      "title": "Component Fundamentals"
+    },
+    {
+      "id": "3",
+      "title": "Template Driven Forms"
+    },
+    {
+      "id": "4",
+      "title": "Angular Services"
+    },
+    {
+      "id": "5",
+      "title": "Server Communication"
+    },
+    {
+      "id": "6",
+      "title": "Component Driven Architecture"
+    },
+    {
+      "id": "7",
+      "title": "Angular Routing"
+    },
+    {
+      "id": "8",
+      "title": "Unit Testing Fundamentals"
     }
   ]
 }

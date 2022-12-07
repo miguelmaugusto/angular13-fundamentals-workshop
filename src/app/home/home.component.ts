@@ -8,13 +8,20 @@ import {Lesson} from '../common/models/lesson';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  lessons$;
   lessons = [];
 
   selectedLesson = null;
   constructor(private lessonsService: LessonsService) {}
 
   ngOnInit() {
-    this.lessons = this.lessonsService.lessons;
+    this.fetchLessons();
+  }
+
+  private fetchLessons() {
+    this.lessonsService.all().subscribe(
+      (result: Lesson[]) => this.lessons = result
+    )
   }
 
   selectLesson(lesson: Lesson){
@@ -22,7 +29,7 @@ export class HomeComponent implements OnInit {
     console.log("Selected lesson ", this.selectedLesson);
   }
 
-  deleteLesson(id:number){
+  deleteLesson(id:string){
     console.log("Delete lesson ", id);
   }
 
