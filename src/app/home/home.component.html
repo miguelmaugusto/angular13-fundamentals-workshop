@@ -4,5 +4,18 @@
   </mat-card-header>
   <mat-card-content>
     <!-- LESSON LIST -->
+    <mat-list>
+      <mat-list-item *ngFor="let lesson of lessons" (click)="selectLesson(lesson.id)">
+        <h3 matLine>{{lesson.title | titlecase}}</h3>
+
+        <button mat-icon-button
+                color="warn"
+                (click)='deleteLesson(lesson.id); $event.stopImmediatePropagation()'
+        >
+
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
   </mat-card-content>
 </mat-card>
