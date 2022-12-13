@@ -10,6 +10,8 @@ import {HomeComponent} from './home/home.component';
 import {CoursesComponent} from './courses/courses.component';
 import {FormsModule} from '@angular/forms';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { CoursesListComponent } from './courses/courses-list/courses-list.component';
+import { CourseDetailsComponent } from './courses/course-details/course-details.component';
 
 @NgModule({
     imports: [
@@ -21,7 +23,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
         FormsModule,
         MatProgressBarModule,
     ],
-  declarations: [AppComponent, HomeComponent, CoursesComponent],
+  declarations: [AppComponent, HomeComponent, CoursesComponent, CoursesListComponent, CourseDetailsComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
